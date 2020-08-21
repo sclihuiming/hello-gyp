@@ -324,6 +324,11 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
                  $(join ^,add.target.mk)))),)
   include add.target.mk
 endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,curry-add.target.mk)))),)
+  include curry-add.target.mk
+endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/tron/Documents/GitHub/hello-gyp/build/config.gypi -I/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/Users/tron/Library/Caches/node-gyp/12.18.2/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/tron/Library/Caches/node-gyp/12.18.2" "-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/Users/tron/Library/Caches/node-gyp/12.18.2/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/tron/Documents/GitHub/hello-gyp" "-Dnode_engine=v8" binding.gyp
