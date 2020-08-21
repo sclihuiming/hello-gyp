@@ -1,0 +1,25 @@
+{
+  "name": "hello-gyp",
+  "version": "1.0.0",
+  "description": "Learning to use c++ extensions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "build:gyp": "node-gyp configure && node-gyp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sclihuiming/hello-gyp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sclihuiming/hello-gyp/issues"
+  },
+  "homepage": "https://github.com/sclihuiming/hello-gyp#readme",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.0.0"
+  }
+}
